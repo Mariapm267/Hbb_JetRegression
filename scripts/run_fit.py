@@ -7,7 +7,7 @@ from scipy.stats import crystalball
 
 '''This script takes the regression file with the invariant masses (true, JEC and GBR) and fits them into crystal balls to estimate the sensitivity improvement factor'''
 
-file_dir="ProcessedDatasets/results_mbb"
+file_dir="./ProcessedDatasets/results_mbb"
 inv_masses = pd.read_pickle(file_dir)
 
 mbb_signal_JEC=inv_masses['mbb_signal_JEC']/1000
@@ -53,7 +53,7 @@ plt.xlabel(r'$m_{b\bar{b}}$  (GeV)')
 plt.ylabel('Normalizado a 1')
 plt.legend(fontsize=12)
 plt.xlim(25,200)
-plt.savefig('figs/mbb_bkg.jpg', dpi=500, bbox_inches='tight')
+plt.savefig('./figs/mbb_bkg.jpg', dpi=500, bbox_inches='tight')
 
 B_regresion=0
 for i in range(len(mbb_bkg_gbr)):
@@ -93,4 +93,4 @@ plt.text(23, 0.025, s = 'LHCb  simulation preliminary', fontsize=14)
 plt.xlim(15,220)
 plt.ylim(0,0.028)
 
-plt.savefig('figs/mbb_corrected.jpg', dpi=500, bbox_inches='tight')
+plt.savefig('./figs/mbb_corrected.jpg', dpi=500, bbox_inches='tight')
